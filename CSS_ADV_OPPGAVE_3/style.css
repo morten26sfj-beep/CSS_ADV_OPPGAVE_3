@@ -1,0 +1,203 @@
+/* Global Reset and Setup */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #0f172a;
+  color: #f8fafc;
+  line-height: 1.6;
+  padding: 40px 20px;
+}
+
+.page-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   PART 1: PSEUDO-ELEMENTS (::before and ::after)
+   ========================================================================== */
+
+/* Task 1.1: Decorative line before the heading using ::before */
+/* Task 1.3: Give ::before distinct color and size */
+.main-heading {
+  position: relative;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.main-heading::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 5px;
+  background-color: #38bdf8; /* Light blue color */
+  margin: 0 auto 12px auto;
+  border-radius: 4px;
+}
+
+/* Task 1.2: Add a star after each list item using ::after */
+/* Task 1.3: Give ::after distinct color and size */
+.feature-list li::after {
+  content: " ★";
+  color: #f59e0b; /* Amber/gold star color */
+  font-size: 1.1rem;
+  margin-left: 8px;
+}
+
+/* Base List Styling */
+.card {
+  background-color: #1e293b;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+
+.feature-list {
+  list-style-type: none;
+  margin-top: 16px;
+}
+
+.feature-list li {
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   PART 2: PSEUDO-SELECTORS
+   ========================================================================== */
+
+/* Task 2.1: Change background color of odd list items using :nth-child(odd) */
+.feature-list li:nth-child(odd) {
+  background-color: #334155;
+}
+
+/* Task 2.3: Different text color for first and last item using :first-child and :last-child */
+.feature-list li:first-child {
+  color: #4ade80; /* Bright Green */
+  font-weight: 600;
+}
+
+.feature-list li:last-child {
+  color: #f43f5e; /* Coral Red */
+  font-weight: 600;
+}
+
+/* Task 2.4: Use :not() to exclude a specific item from styling */
+/* Applies bold font weight to all list items EXCEPT the 3rd child */
+.feature-list li:not(:nth-child(3)) {
+  font-weight: 600;
+}
+
+/* Task 2.2: Add transition effect on hover for the button using :hover */
+.action-area {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.interactive-btn {
+  background-color: #6366f1;
+  color: #ffffff;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  /* Smooth transition effect for hover */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interactive-btn:hover {
+  background-color: #4f46e5;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* ==========================================================================
+   EXTRA CHALLENGE (OPTIONAL)
+   ========================================================================== */
+
+/* Subsections layout */
+.content-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.sub-card {
+  background-color: #1e293b;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+/* Extra Challenge: Use :nth-of-type to style one specific subsection */
+.sub-card:nth-of-type(2) {
+  border: 2px solid #38bdf8;
+  background-color: #1a2e45;
+}
+
+/* Extra Challenge: Featured section with decorative frame box via ::before and ::after */
+.featured-banner {
+  position: relative;
+  background-color: #1e293b;
+  padding: 32px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.featured-banner::before,
+.featured-banner::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #ec4899; /* Pink decorative corner frames */
+}
+
+/* Top-left corner bracket */
+.featured-banner::before {
+  top: -6px;
+  left: -6px;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* Bottom-right corner bracket */
+.featured-banner::after {
+  bottom: -6px;
+  right: -6px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Extra Challenge: Use :focus for special effect on input field */
+.input-group {
+  margin-top: 16px;
+}
+
+.input-group input {
+  width: 80%;
+  padding: 12px;
+  border: 2px solid #475569;
+  border-radius: 6px;
+  background-color: #0f172a;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #ec4899;
+  box-shadow: 0 0 12px rgba(236, 72, 153, 0.4);
+}

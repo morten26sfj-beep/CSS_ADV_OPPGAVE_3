@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Pseudo-Elements & Selectors Mastery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Main Container -->
+  <main class="page-container">
+
+    <!-- Requirement 1: Main Heading (h1) -->
+    <h1 class="main-heading">Learn Pseudo-Elements & Selectors</h1>
+
+    <!-- Requirement 1: Unordered list (ul) with 5 items -->
+    <section class="card">
+      <h2>List Features</h2>
+      <ul class="feature-list">
+        <li>First Feature Item</li>
+        <li>Second Feature Item</li>
+        <li>Third Feature Item (Excluded from bold style)</li>
+        <li>Fourth Feature Item</li>
+        <li>Fifth Feature Item</li>
+      </ul>
+    </section>
+
+    <!-- Requirement 1: Section with three subsections (divs) -->
+    <section class="content-section">
+      <div class="sub-card">
+        <h3>Subsection 1</h3>
+        <p>This is the first subsection card.</p>
+      </div>
+
+      <div class="sub-card">
+        <h3>Subsection 2</h3>
+        <p>This subsection is specifically targeted using :nth-of-type(2).</p>
+      </div>
+
+      <div class="sub-card">
+        <h3>Subsection 3</h3>
+        <p>This is the third subsection card.</p>
+      </div>
+    </section>
+
+    <!-- Extra Challenge: Featured section with custom ::before and ::after border box -->
+    <section class="featured-banner">
+      <h2>Featured Section</h2>
+      <p>Focus the input field below to see the :focus pseudo-class in action!</p>
+      
+      <!-- Input for :focus demo -->
+      <div class="input-group">
+        <input type="text" placeholder="Click or tap here to focus..." />
+      </div>
+    </section>
+
+    <!-- Requirement 1: Interactive Button -->
+    <div class="action-area">
+      <button class="interactive-btn">Hover Over Me!</button>
+    </div>
+
+  </main>
+
+</body>
+</html>
